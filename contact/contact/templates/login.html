@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title>欢迎2班的你！</title>
+</head>
+<body>
+	<form action="/information/" method="get">
+		<label>学号：</label>
+		<input type="text" name="studentnum">
+		<input type="submit" value="提交">
+	</form>
+	
+	{% block footer %}
+	<hr>
+	<p>2班永远是你的家！</p>
+	{% endblock %}
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% extends "class2.html" %}
+
+{% block head %}
+修改个人信息
+{% endblock %}
+
+{%  block content%}
+
+	{% if form.errors %}
+		<p style="color:red;">
+			请按提示修改错误。
+		</p>
+	{% endif %}
+	
+	<form action="" method="post">
+		<div>
+			{{ form.studentnum.errors }}
+			<label>学号：</label>
+			{{form.studentnum}}
+		</div>
+		<div>
+			{{ form.name.errors }}
+			<label>姓名：</label>
+			{{form.name}}
+		</div>
+		<div>
+			{{ form.phone.errors }}
+			<label>手机：</label>
+			{{form.phone}}
+		</div>
+		<input type="submit" value="提交">
+	</form>	
+		
+{% endblock %}

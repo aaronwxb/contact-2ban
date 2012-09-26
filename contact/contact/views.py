@@ -1,26 +1,12 @@
+#coding:utf-8
 from django.shortcuts import render_to_response
 from django.template.loader import get_template
 from django.template import Context
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 import datetime
 from contact.get_contact import models
+from contact.forms import PersonalInfo
 
-def hello(request):
-	return HttpResponse("Hello world")
-
-def current_datetime(request):
-	now = datetime.datetime.now()
-	t = get_template('current_datetime.html')
-	html = t.render(Context({'current_date': now}))
-	return HttpResponse(html)
-
-def hours_ahead(request, offset):
-	try:
-		offset = int(offset)
-	except ValueError:
-		raise Http404()
-	dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
-	return render_to_response('current_datetime_ahead.html',{'offset':offset,'dt':dt})
 
 def login(request):
 	return render_to_response('login.html')
@@ -35,3 +21,19 @@ def information(request):
 			information = models.Information.objects.filter(studentnum=studentnum)
 			return render_to_response("information.html",{'information':information})
 	return render_to_response('login.html',{'error':error})
+
+def modifyinfo(request):
+	if request.method == 'POST':
+		form = PersonalInfo(request.POST)
+		if form.is_valid():
+			cd = form.cleaned_data
+
+			return HttpResponseRedirect('/modifyinfo/success/')
+	else:
+		form = PersonalInfo(
+			initial={'name':'太2了！'}
+		)
+	return render_to_response('modify_info.html',{'form':form})
+
+def modifysuccess(request):
+	return render_to_response('modify_success.html')

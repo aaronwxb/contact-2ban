@@ -1,17 +1,19 @@
-<html>
-<head>
-	<title>欢迎2班的你！</title>
-</head>
-<body>
+{% extends "class2.html" %}
+
+{% block head %}
+请输入学号
+{% endblock %}
+
+{%  block content%}
+
+	{% if error %}
+		<p style="color:red;">请输入自己的本科学号</p>
+	{% endif %}
+
 	<form action="/information/" method="get">
 		<label>学号：</label>
 		<input type="text" name="studentnum">
 		<input type="submit" value="提交">
 	</form>
-	
-	{% block footer %}
-	<hr>
-	<p>2班永远是你的家！</p>
-	{% endblock %}
-</body>
-</html>
+
+{% endblock %}

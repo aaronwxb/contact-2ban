@@ -1,14 +1,16 @@
-<html>
-<head>
-	<title>欢迎2班的你！</title>
-</head>
-<body>
-	<h1>厦门大学2007级计算机系2班</h1>
-	
-	
-	{% block footer %}
-	<hr>
-	<p>2班永远是你的家！</p>
-	{% endblock %}
-</body>
-</html>
+{% extends "class2.html" %}
+
+{% block head %}
+厦门大学2007级计算机系2班
+{% endblock %}
+
+{%  block content%}
+	{% if information %}
+		<p >你的个人信息如下：</p>
+		<ul>
+			<li>{{information.name}}</li>
+		</ul>
+	{% else %}
+		<p>没有此记录！</p>
+	{% endif %}
+{% endblock %}

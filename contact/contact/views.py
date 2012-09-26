@@ -3,6 +3,7 @@ from django.template.loader import get_template
 from django.template import Context
 from django.http import HttpResponse
 import datetime
+from contact.get_contact import models
 
 def hello(request):
 	return HttpResponse("Hello world")
@@ -25,9 +26,9 @@ def login(request):
 	return render_to_response('login.html')
 
 def information(request):
-	if 'studentnum' in request.GET:
-		message = 'studentnum is %r' % request.GET['studentnum']
+	if 'studentnum' in request.GET and request.GET['studentnum']:
+		studentnum = request.GET['studentnum']
+		information = models.Information.objects.filter(studentnum=studentnum)
+		return render_to_response("information.html",{'information':information})
 	else:
-		message = 'you submitted an empty form.'
-	return HttpResponse(message)
-	#return render_to_response('information.html')
+		return render_to_response('login.html',{'error':True})

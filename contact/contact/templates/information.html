@@ -7,9 +7,18 @@
 {%  block content%}
 	{% if information %}
 		<p >你的个人信息如下：</p>
-		<ul>
-			<li>{{information.name}}</li>
-		</ul>
+		<table border='1'>
+			<tr>
+				<th>学号</th>
+				<th>姓名</th>
+			</tr>
+			{% for infor in information %}
+			<tr>
+				<td>{{infor.studentnum}}</td>
+				<td>{{infor.name}}</td>
+			</tr>
+			{% endfor %}
+		</table>
 	{% else %}
 		<p>没有此记录！</p>
 	{% endif %}

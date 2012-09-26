@@ -26,9 +26,12 @@ def login(request):
 	return render_to_response('login.html')
 
 def information(request):
-	if 'studentnum' in request.GET and request.GET['studentnum']:
+	error = False;
+	if 'studentnum' in request.GET:
 		studentnum = request.GET['studentnum']
-		information = models.Information.objects.filter(studentnum=studentnum)
-		return render_to_response("information.html",{'information':information})
-	else:
-		return render_to_response('login.html',{'error':True})
+		if not studentnum:
+			error = True
+		else:
+			information = models.Information.objects.filter(studentnum=studentnum)
+			return render_to_response("information.html",{'information':information})
+	return render_to_response('login.html',{'error':error})

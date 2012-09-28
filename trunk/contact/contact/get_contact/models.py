@@ -3,7 +3,6 @@ from django.db import models
 
 class Information(models.Model):
 	studentnum = models.CharField(max_length=14,primary_key=True)
-	password = models.CharField(max_length=20)
 	name = models.CharField(max_length=10)
 	phone = models.CharField(max_length=20)
 	qq = models.CharField(max_length=15)

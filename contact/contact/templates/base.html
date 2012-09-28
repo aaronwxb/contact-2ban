@@ -1,13 +1,16 @@
 <html>
 <head>
-	<title>{% block title %}{% endblock %}</title>
+	<title>欢迎2班的你！</title>
 </head>
 <body>
-	<h1>My helpful timestamp site</h1>
-	<p>{% block content %}{% endblock %}</p>
+	<h1>{% block head %}{% endblock %}</h1>
+
+	{% block content %}
+	{% endblock %}
+	
 	{% block footer %}
 	<hr>
-	<p>Thanks for visiting my site.</p>
+	<p>2班永远是你的家！</p>
 	{% endblock %}
 </body>
 </html>

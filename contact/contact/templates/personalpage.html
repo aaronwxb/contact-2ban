@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head %}
+厦门大学2007级计算机系2班
+{% endblock %}
+
+{%  block content%}
+	{% if personalinfo %}
+		<p >你的个人信息如下：</p>
+		<table border='1'>
+			<tr>
+				<td>学号</td>
+				<td>{{personalinfo.studentnum}}</td>
+			</tr>
+			<tr>
+				<td>姓名</td>	
+				<td>{{personalinfo.name}}</td>
+			</tr>
+		</table>
+	{% else %}
+		<p>没有此记录！</p>
+	{% endif %}
+{% endblock %}

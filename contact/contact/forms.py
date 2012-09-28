@@ -2,6 +2,10 @@
 from django import forms
 from django.contrib.localflavor.cn.forms import CNPostCodeField,CNCellNumberField
 
+class LoginInfo(forms.Form):
+	studentnum = forms.CharField(max_length=14,label="学号")
+	password = forms.CharField(max_length=20,label="密码")
+
 class PersonalInfo(forms.Form):
 	studentnum = forms.CharField(max_length=14,label="学号")
 	name = forms.CharField(max_length=10,label="姓名")

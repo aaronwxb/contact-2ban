@@ -1,4 +1,4 @@
-{% extends "class2.html" %}
+{% extends "base.html" %}
 
 {% block head %}
 请输入学号
@@ -6,14 +6,27 @@
 
 {%  block content%}
 
-	{% if error %}
-		<p style="color:red;">请输入自己的本科学号</p>
+	{% if form.errors %}
+		<p style="color:red;">
+			请按提示修改错误。
+		</p>
 	{% endif %}
+	
+	<form action="" method="post">
+		<div>
+			{{ form.studentnum.errors }}
+			<label>学号：</label>
+			<input type="text" name="studentnum" value="本科学号" onfocus="if (value =='本科学号'){value=''}" onblur="if(value=='') {value='本科学号'}">
+			{{form.studentnum}}
+		</div>
+		<div>
+			{{ form.password.errors }}
+			<label>姓名：</label>
+			<input type="password" name="password">
+			{{form.password}}
+		</div>
 
-	<form action="/information/" method="get">
-		<label>学号：</label>
-		<input type="text" name="studentnum">
-		<input type="submit" value="提交">
-	</form>
+		<input type="submit" value="登录">
+	</form>	
 
 {% endblock %}

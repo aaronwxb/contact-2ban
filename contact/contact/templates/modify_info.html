@@ -1,34 +1,72 @@
 {% extends "base.html" %}
 
-{% block head %}
-修改个人信息
-{% endblock %}
-
 {%  block content%}
+	<div class="main">
+	  <div class="header">
+	    <div class="header_resize">
+	      <div class="logo"><h1><a href="/l">厦门大学2007级计算机系2班</a></h1></div>
+	      <div class="menu_nav">
+	        <ul>
+	          <li><a href="/personalpage/">个人信息</a></li>
+	          <li class="active"><a href="/modifyinfo/">修改信息</a></li>
+	          <li><a href="">通讯录</a></li>
+	          <li><a href="">关于</a></li>
+	        </ul>
+	      </div>
+	      <div class="clr"></div>
+	    </div>
+	  </div>
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2>修改个人信息</h2>
+          <form action="#" method="post" id="leavereply">
+          <ol><li>
+            学号：<input id="studentnum" name="studentnum" class="text" />
+          </li><li>
+          	姓名：<input id="name" name="name" class="text" />
+          </li><li>
+            Email：<input id="email" name="studentnum" class="text" />
+          </li><li>
+            工作：<input id="job" name="job" class="text" />
+          </li><li>
+            公司：<input id="company" name="company" class="text" />
+          </li><li>
+            邮编：<input id="postnum" name="postnum" class="text" />
+          </li><li>
+            地址：<input id="addr" name="addr" class="text" />
+          </li><li>
+            关系：<input id="relationship" name="relationship" class="text" />
+          </li><li>
+            微博：<input id="weibo" name="weibo" class="text" />
+          </li><li>
+            人人：<input id="renren" name="renren" class="text" />
+          </li><li>
+            个人主页：<input id="website" name="website" class="text" />
+          </li><li>
+            <input type="image" name="imageField" id="imageField" src="/static/images/submit.gif" class="send" />
+            <div class="clr"></div>
+          </li></ol>
+          </form>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="gadget">
+          <h2 class="star">班级公告</h2>
+          <p>hello!</p>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
 
-	{% if form.errors %}
-		<p style="color:red;">
-			请按提示修改错误。
-		</p>
-	{% endif %}
-	
-	<form action="" method="post">
-		<div>
-			{{ form.studentnum.errors }}
-			<label>学号：</label>
-			{{form.studentnum}}
-		</div>
-		<div>
-			{{ form.name.errors }}
-			<label>姓名：</label>
-			{{form.name}}
-		</div>
-		<div>
-			{{ form.phone.errors }}
-			<label>手机：</label>
-			{{form.phone}}
-		</div>
-		<input type="submit" value="提交">
-	</form>	
-		
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <p>班级通讯录</p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
 {% endblock %}

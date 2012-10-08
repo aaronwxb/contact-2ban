@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from contact import views
+from os import path
 
 urlpatterns = patterns('',
     (r'^login/$', views.login),
@@ -10,4 +11,7 @@ urlpatterns = patterns('',
     (r'^checklogin/', views.check_login),
     (r'^accounts/login/$', views.login),
     (r'^classall/$', views.classall),
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
+        {'document_root': path.join(path.abspath(path.dirname(__file__)), 'static'),
+         'show_indexes': False}, name="static"),
 )

@@ -21,31 +21,31 @@
       <div class="mainbar">
         <div class="article">
           <h2>修改个人信息</h2>
-          <form action="#" method="post" id="leavereply">
+          <form action="/handle_modify/" method="post" id="leavereply">
           <ol><li>
-            学号：<input id="studentnum" name="studentnum" class="text" />
+            学号：<input id="studentnum" name="studentnum" class="text" value="{{personalinfo.studentnum}}" />
           </li><li>
-          	姓名：<input id="name" name="name" class="text" />
+          	姓名：<input id="name" name="name" class="text" value="{{personalinfo.name}}" />
           </li><li>
-            Email：<input id="email" name="studentnum" class="text" />
+            Email：<input id="email" name="email" class="text" value="{{personalinfo.email}}" />
           </li><li>
-            工作：<input id="job" name="job" class="text" />
+            工作：<input id="job" name="job" class="text" value="{{personalinfo.job}}" />
           </li><li>
-            公司：<input id="company" name="company" class="text" />
+            公司：<input id="company" name="company" class="text" value="{{personalinfo.studentnum}}" />
           </li><li>
-            邮编：<input id="postnum" name="postnum" class="text" />
+            邮编：<input id="postnum" name="postnum" class="text" value="{{personalinfo.studentnum}}" />
           </li><li>
-            地址：<input id="addr" name="addr" class="text" />
+            地址：<input id="addr" name="addr" class="text" value="{{personalinfo.studentnum}}" />
           </li><li>
-            关系：<input id="relationship" name="relationship" class="text" />
+            关系：<input id="relationship" name="relationship" class="text" value="{{personalinfo.studentnum}}" />
           </li><li>
-            微博：<input id="weibo" name="weibo" class="text" />
+            微博：<input id="weibo" name="weibo" class="text" value="{{personalinfo.studentnum}}" />
           </li><li>
-            人人：<input id="renren" name="renren" class="text" />
+            人人：<input id="renren" name="renren" class="text" value="{{personalinfo.studentnum}}" />
           </li><li>
-            个人主页：<input id="website" name="website" class="text" />
+            个人主页：<input id="website" name="website" class="text" value="{{personalinfo.studentnum}}" />
           </li><li>
-            <input type="image" name="imageField" id="imageField" src="/static/images/submit.gif" class="send" />
+            <input type="image" name="submit" id="submit" src="/static/images/submit.gif" class="send" />
             <div class="clr"></div>
           </li></ol>
           </form>

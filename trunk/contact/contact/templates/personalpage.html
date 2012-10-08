@@ -1,22 +1,65 @@
 {% extends "base.html" %}
 
-{% block head %}
-厦门大学2007级计算机系2班
-{% endblock %}
-
 {%  block content%}
+	<div class="main">
+	  <div class="header">
+	    <div class="header_resize">
+	      <div class="logo"><h1><a href="/l">厦门大学2007级计算机系2班</a></h1></div>
+	      <div class="menu_nav">
+	        <ul>
+	          <li class="active"><a href="/personalpage/">个人信息</a></li>
+	          <li><a href="/modifyinfo/">修改信息</a></li>
+	          <li><a href="">通讯录</a></li>
+	          <li><a href="">关于</a></li>
+	        </ul>
+	      </div>
+	      <div class="clr"></div>
+	    </div>
+	  </div>
 	{% if personalinfo %}
-		<p >你的个人信息如下：</p>
-		<table border='1'>
-			<tr>
-				<td>学号</td>
-				<td>{{personalinfo.studentnum}}</td>
-			</tr>
-			<tr>
-				<td>姓名</td>	
-				<td>{{personalinfo.name}}</td>
-			</tr>
-		</table>
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>基本信息</span></h2>
+          <p>
+	          <ul>
+		          <li>学号：{{personalinfo.studentnum}}</li>
+		          <li>姓名：{{personalinfo.name}}</li>
+		          <li>电话：{{personalinfo.phone}}</li>
+		          <li>QQ：{{personalinfo.qq}}</li>
+		          <li>EMAIL：{{personalinfo.email}}</li>
+		          <li>工作：{{personalinfo.job}}</li>
+		          <li>所属公司：{{personalinfo.company}}</li>
+		          <li>邮编：{{personalinfo.postnum}}</li>
+		          <li>地址：{{personalinfo.addr}}</li>
+		          <li>关系：{{personalinfo.relationship}}</li>
+		          <li>微博：{{personalinfo.weibo}}</li>
+		          <li>人人：{{personalinfo.renren}}</li>
+		          <li>个人主页：{{personalinfo.personal_home_page}}</li>
+	          </ul>
+          </p>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="gadget">
+          <h2 class="star">班级公告</h2>
+          <p>hello!</p>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <p>班级通讯录</p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
 	{% else %}
 		<p>没有此记录！</p>
 	{% endif %}

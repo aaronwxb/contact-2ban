@@ -12,7 +12,13 @@
 		</p>
 	{% endif %}
 	
+	<div id="loginpic" align="left">
+	
+	</div>
+	
+	<div id="loginform" align="center">
 	<form action="/checklogin/" method="post">
+		
 		<div>
 			{{ form.studentnum.errors }}
 			<label>学号：</label>
@@ -21,12 +27,13 @@
 		</div>
 		<div>
 			{{ form.password.errors }}
-			<label>姓名：</label>
+			<label>密码：</label>
 			<input type="password" name="password">
 			{{form.password}}
 		</div>
 
 		<input type="submit" value="登录">
 	</form>	
+	</div>
 
 {% endblock %}

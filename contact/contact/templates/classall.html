@@ -1,25 +1,82 @@
 {% extends "base.html" %}
 
-{% block head %}
-厦门大学2007级计算机系2班
-{% endblock %}
-
 {%  block content%}
-	{% if information %}
-		<p >你的个人信息如下：</p>
-		<table border='1'>
-			<tr>
-				<th>学号</th>
-				<th>姓名</th>
-			</tr>
-			{% for info in information %}
-			<tr>
-				<td>{{info.studentnum}}</td>
-				<td>{{info.name}}</td>
-			</tr>
-			{% endfor %}
-		</table>
-	{% else %}
-		<p>没有此记录！</p>
-	{% endif %}
+	<div class="main">
+	  <div class="header">
+	    <div class="header_resize">
+	      <div class="logo"><h1><a href="/l">厦门大学2007级计算机系2班</a></h1></div>
+	      <div class="menu_nav">
+	        <ul>
+	          <li><a href="/personalpage/">个人信息</a></li>
+	          <li><a href="/modifyinfo/">修改信息</a></li>
+	          <li class="active"><a href="/classall/">通讯录</a></li>
+	          <li><a href="/about/">关于</a></li>
+	        </ul>
+	      </div>
+	      <div class="clr"></div>
+	    </div>
+	  </div>
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2><span>班级通讯录</span></h2>
+          <p>
+	          {% if information %}
+	          <table id="report" border='1' width="100%">
+	          	<tr>
+					<th nowrap="nowrap">学号</th>
+					<th nowrap="nowrap">姓名</th>
+					<th nowrap="nowrap">电话</th>
+					<th nowrap="nowrap">QQ</th>
+					<th nowrap="nowrap">EMAIL</th>
+					<th nowrap="nowrap">感情状态</th>
+					<th nowrap="nowrap"></th>
+			  	</tr>
+				 {% for info in information %}
+				 <tr>
+					<td>{{info.studentnum}}</td>
+					<td nowrap="nowrap">{{info.name}}</td>
+					<td nowrap="nowrap">{{info.phone}}</td>
+					<td nowrap="nowrap">{{info.qq}}</td>
+					<td nowrap="nowrap">{{info.email}}</td>
+					<td nowrap="nowrap">{{info.relationship}}</td>
+					<td><div class="arrow"></div></td>
+				 </tr>
+				 <tr>
+           			<td colspan="7">
+                		<h4>Additional information</h4>
+                		<ul>
+                			<li><a href="">所属公司:{{info.company}}</a></li>
+                			<li><a href="">职位:{{info.job}}</a></li>
+                    		<li><a href="">地址:{{info.addr}}</a></li>
+                    		<li><a href="">微博:{{info.weibo}}</a></li>
+                    		<li><a href="">人人:{{info.renren}}</a></li>
+                    		<li><a href="">个人主页:{{info.personal_home_page}}</a></li>
+                 		</ul>   
+            		</td>
+        		 </tr>
+				 
+				 {% endfor %}
+			   </table>
+			   {% else %}
+				  <p>出错了！</p>
+			   {% endif %}
+          </p>
+        </div>
+      </div>
+     
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="col c1">
+        <p>班级通讯录</p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
 {% endblock %}

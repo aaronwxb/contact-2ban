@@ -9,8 +9,8 @@
 	        <ul>
 	          <li><a href="/personalpage/">个人信息</a></li>
 	          <li class="active"><a href="/modifyinfo/">修改信息</a></li>
-	          <li><a href="">通讯录</a></li>
-	          <li><a href="">关于</a></li>
+	          <li><a href="/classall/">通讯录</a></li>
+	          <li><a href="/about/">关于</a></li>
 	        </ul>
 	      </div>
 	      <div class="clr"></div>
@@ -22,32 +22,64 @@
         <div class="article">
           <h2>修改个人信息</h2>
           <form action="/handle_modify/" method="post" id="leavereply">
-          <ol><li>
-            学号：<input id="studentnum" name="studentnum" class="text" value="{{personalinfo.studentnum}}" />
-          </li><li>
-          	姓名：<input id="name" name="name" class="text" value="{{personalinfo.name}}" />
-          </li><li>
+		<ol>
+		  <li>
+			学号：<input id="studentnum" name="studentnum" class="text" readonly="readonly" value="{{personalinfo.studentnum}}" />
+          </li>
+          <li>
+          	姓名：<input id="name" name="name" class="text" readonly="readonly" value="{{personalinfo.name}}" />
+          </li>
+          <li>
+			手机：<input id="phone" name="phone" class="text" value="{{personalinfo.phone}}" />
+          </li>
+          <li>
+            QQ：<input id="qq" name="qq" class="text" value="{{personalinfo.qq}}" />
+          </li>
+          <li>
             Email：<input id="email" name="email" class="text" value="{{personalinfo.email}}" />
-          </li><li>
-            工作：<input id="job" name="job" class="text" value="{{personalinfo.job}}" />
-          </li><li>
-            公司：<input id="company" name="company" class="text" value="{{personalinfo.studentnum}}" />
-          </li><li>
-            邮编：<input id="postnum" name="postnum" class="text" value="{{personalinfo.studentnum}}" />
-          </li><li>
-            地址：<input id="addr" name="addr" class="text" value="{{personalinfo.studentnum}}" />
-          </li><li>
-            关系：<input id="relationship" name="relationship" class="text" value="{{personalinfo.studentnum}}" />
-          </li><li>
-            微博：<input id="weibo" name="weibo" class="text" value="{{personalinfo.studentnum}}" />
-          </li><li>
-            人人：<input id="renren" name="renren" class="text" value="{{personalinfo.studentnum}}" />
-          </li><li>
-            个人主页：<input id="website" name="website" class="text" value="{{personalinfo.studentnum}}" />
-          </li><li>
+          </li>
+          <li>
+          	工作：<input id="job" name="job" class="text" value="{{personalinfo.job}}" />
+          </li>
+          <li>
+			公司：<input id="company" name="company" class="text" value="{{personalinfo.company}}" />
+          </li>
+          <li>
+			邮编：<input id="postnum" name="postnum" class="text" value="{{personalinfo.postnum}}" />
+          </li>
+          <li>
+			 地址：<input id="addr" name="addr" class="text" value="{{personalinfo.addr}}" />
+          </li>
+          <li>
+			感情状态：<select id="relation" name="relation" value="{{personalinfo.relation}}">
+				<option value="0">单身</option>
+				<option value="1">有男朋友</option>
+				<option value="2">有女朋友</option>
+				<option value="3">已婚</option>
+				<option value="31">纸婚</option>
+				<option value="310">锡婚</option>
+				<option value="320">瓷婚</option>
+				<option value="330">珍珠婚</option>
+				<option value="340">红宝石婚</option>
+				<option value="350">金婚</option>
+				<option value="4">离婚</option>
+				<option value="5">二婚</option>	
+			</select>
+          </li>
+          <li>
+			微博：<input id="weibo" name="weibo" class="text" value="{{personalinfo.weibo}}" />
+          </li>
+          <li>
+			人人：<input id="renren" name="renren" class="text" value="{{personalinfo.renren}}" />
+          </li>
+          <li>
+			个人主页：<input id="personal_home_page" name="personal_home_page" class="text" value="{{personalinfo.personal_home_page}}" />
+          </li>
+          <li>
             <input type="image" name="submit" id="submit" src="/static/images/submit.gif" class="send" />
             <div class="clr"></div>
-          </li></ol>
+          </li>
+          </ol>
           </form>
         </div>
       </div>

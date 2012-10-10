@@ -10,10 +10,10 @@ class PersonalInfo(forms.Form):
 	studentnum = forms.CharField(max_length=14,label="学号")
 	name = forms.CharField(max_length=10,label="姓名")
 	phone = forms.CharField(max_length=11,label="手机")
-	qq = forms.IntegerField(required=False,label="QQ")
+	qq = forms.CharField(required=False,max_length=20,label="QQ")
 	email = forms.EmailField(required=False,label="邮箱")
 	job = forms.CharField(required=False,max_length=30,label="职称")
-	company = forms.CharField(required=False,max_length=100,widget=forms.Textarea,label="单位")
+	company = forms.CharField(required=False,max_length=100,label="单位")
 	postnum = forms.CharField(required=False,max_length=6,min_length=6,label="邮编")
 	addr = forms.CharField(required=False,max_length=100,widget=forms.Textarea,label="地址")
 	RELATION_STATUS = (

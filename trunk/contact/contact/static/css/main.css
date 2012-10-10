@@ -82,3 +82,14 @@ ol li label { display:block; margin:0; padding:16px 0 0 0;width:50px;}
 ol li input.text { width:450px; border:1px solid #c0c0c0; margin:2px 0; height:24px; background:#fff;}
 ol li textarea { width:480px; border:1px solid #c0c0c0; margin:2px 0; padding:2px; background:#fff;}
 ol li .send { margin:16px 0 0 0;}
+
+/* report */
+#report { border-collapse:collapse;}
+#report h4 { margin:0px; padding:0px;}
+#report img { float:right;}
+#report ul { margin:10px 0 10px 40px; padding:0px;}
+#report th { background:#7CB8E2 url() repeat-x scroll center left; color:#fff; padding:7px 15px; text-align:left;}
+#report td { background:#C7DDEE none repeat-x scroll center left; color:#000; padding:7px 15px; }
+#report tr.odd td { background:#fff url() repeat-x scroll center left; cursor:pointer; }
+#report div.arrow { background:transparent url(../images/arrows.png) no-repeat scroll 0px -16px; width:16px; height:16px; display:block;}
+#report div.up { background-position:0px 0px;}
